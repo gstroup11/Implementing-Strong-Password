@@ -63,7 +63,7 @@ function formpasswordoptions() {
   return passwordoptions;
 }
 
-
+//function for generating the random characters at the desired length
   function getRandom(arr) {
     var randIndex = Math.floor(Math.random() * arr.length);
     var randElement = arr[randIndex];
@@ -71,15 +71,20 @@ function formpasswordoptions() {
     return randElement;
   }
 
-
+//function for generating the said password to the specified user choice
 function generatepassword() {
+  //variable to bring in the options from the previous function
   var options = formpasswordoptions();
+  //variable to store the password as its being concatenated
   var result = [];
+  //variable to store the characters that could be used in the password
   var possibleCharacters = [];
+  //variable to store the type of characters chosen to be in the password
   var guaranteedCharacters = [];
-
+  //this if statement checks to see if the options variable and its function exists, if not it returns
   if (!options) return null;
 
+  // if statements that will add the array of that characters vartiable listed at the top of the page and pushes it to guaranteed characters
   if (options.haslowercase) {
     possibleCharacters = possibleCharacters.concat(lowercase);
     guaranteedCharacters.push(getRandom(lowercase));
@@ -100,16 +105,19 @@ function generatepassword() {
     guaranteedCharacters.push(getRandom(numbers));
   }
 
+  // loop that will go over the length from the options object and then select randomly from those arrays
   for (var i = 0; i < options.characterlength; i++) {
     var possibleCharacter = getRandom(possibleCharacters);
 
     result.push(possibleCharacter);
   }
 
+  //makes sures to add at least one of the guaranteed characters from the user input into the password
   for (var i = 0; i < guaranteedCharacters.characterlength; i++) {
     result[i] = guaranteedCharacters[i];
   }
 
+  // turns that result from the previous loops and puts into a string to pass to write Password
   return result.join('');
 }
 
