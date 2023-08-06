@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<!--head element section-->
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,16 +8,21 @@
     <title>Password Generator</title>
     <link rel="stylesheet" href="style.css" />
   </head>
+  <!--end head section-->
+  <!--body section-->
   <body>
     <div class="wrapper">
       <header>
+        <!--Main Header-->
         <h1>Password Generator</h1>
       </header>
       <div class="card">
         <div class="card-header">
+          <!--Secondary Header-->
           <h2>Generate a Password</h2>
         </div>
         <div class="card-body">
+          <!--main text box for password generation-->
           <textarea
             readonly
             id="password"
@@ -25,10 +31,13 @@
           ></textarea>
         </div>
         <div class="card-footer">
+          <!--puts the button to generate the password onto the main html page-->
           <button id="generate" class="btn">Generate Password</button>
         </div>
       </div>
     </div>
+    <!--linking the Javascript page to the main html-->
     <script src="script.js"></script>
   </body>
+  <!--end body section-->
 </html>
