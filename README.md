@@ -8,6 +8,8 @@ This project was solely centered around javascript.  The main purpose of this si
 
 The generator is easy to use.  When on the site click the "Generate Password" button under the text box.  You will then be prompted with how many characters you would like in the password.  You can choose between 8 and 128 characters.  After that You can choose between lowercase, uppercase, special characters, and numbers through the alerts.  "OK" will comfirm that you want those characters and "cancel" will say you don't want that specified character. Once you go through all four prompts your password will be generated! Just simply copy and paste the password and use it wherever you'd like.  
 
+Access this site Using: https://gstroup11.github.io/Implementing-Strong-Password/
+
 ![Main Password Generator Page](https://raw.githubusercontent.com/gstroup11/Implementing-Strong-Password/main/Develop/images/mainpage.png)
 
 ![Character Length Prompt](https://raw.githubusercontent.com/gstroup11/Implementing-Strong-Password/main/Develop/images/characterlength.png)
