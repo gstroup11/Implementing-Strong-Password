@@ -4,44 +4,44 @@ var uppercase = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P'
 var specialcharacters = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '+', '-', '.', '~', '|', '<', '>', '=', '-', '_', '/', ':', ';', '?', '[', ']', '{', '}', '~'];
 var numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 
-
+//Main Function to form the options for the password.
 function formpasswordoptions() {
   var characterlength = parseInt(
     prompt('How many characters do you need in your password?'), 
     10
   );
-
+//returns if the user doesn't use a number
   if(Number.isNaN(characterlength)) {
     alert('Password length must be a number.');
     return null;
   }
-
-  if (length < 8) {
+//returns if the user doesnt select more than 8 characters
+  if (characterlength < 8) {
     alert('Password must be larger than 8 characters.');
     return null;
   }
-
-  if (length > 128) {
+//returns if the user doesnt select less than 128 characters
+  if (characterlength > 128) {
     alert('Password must be smaller than 128 characters.');
     return null;
   }
-
+//Boolean statement set to ask the user if they want lowercase letters or not
   var haslowercase = confirm(
     'Click OK to confirm including lowercase characters in the password.'
   );
-
+//Boolean statement set to ask the user if they want uppercase letters or not
   var hasuppercase = confirm(
     'Click OK to confirm including uppercase characters in the password.'
   );
-
+//Boolean statement set to ask the user if they want special characters or not
   var hasspecialcharacters = confirm(
     'Click OK to confirm including special characters in the password.' 
   );
-
+//Boolean statment set to ask if the user wants numbers or not
   var hasnumbers = confirm(
     'Click OK to confirm including number in the password.'
   );
-
+//if statement setting if all the options are not slected then it will return and make them select an option.
   if (
     haslowercase === false &&
     hasuppercase === false &&
@@ -51,7 +51,7 @@ function formpasswordoptions() {
     alert('Must select at least one character.')
     return null;
   }
-
+//storing the variables 
   var passwordoptions = {
     characterlength: characterlength,
     haslowercase: haslowercase,
@@ -75,8 +75,8 @@ function formpasswordoptions() {
 function generatepassword() {
   var options = formpasswordoptions();
   var result = [];
-  var possiblecharacters = [];
-  var guranteedcharacters = [];
+  var possibleCharacters = [];
+  var guaranteedCharacters = [];
 
   if (!options) return null;
 
@@ -86,27 +86,27 @@ function generatepassword() {
   }
 
   if (options.hasuppercase) {
-    possiblecharacters = possiblecharacters.concat(uppercase);
-    guranteedcharacters.push(getRandom(uppercase));
+    possibleCharacters = possibleCharacters.concat(uppercase);
+    guaranteedCharacters.push(getRandom(uppercase));
   }
 
   if (options.hasspecialcharacters) {
-    possiblecharacters = possiblecharacters.concat(specialcharacters);
-    guranteedcharacters.push(getRandom(hasspecialcharacters));
+    possibleCharacters = possibleCharacters.concat(specialcharacters);
+    guaranteedCharacters.push(getRandom(specialcharacters));
   }
 
   if (options.hasnumbers) {
-    possiblecharacters = possiblecharacters.concat(hasnumbers);
-    guranteedcharacters.push(getRandom(hasnumbers));
+    possibleCharacters = possibleCharacters.concat(numbers);
+    guaranteedCharacters.push(getRandom(numbers));
   }
 
-  for (var i = 0; i < options.length; i++) {
+  for (var i = 0; i < options.characterlength; i++) {
     var possibleCharacter = getRandom(possibleCharacters);
 
     result.push(possibleCharacter);
   }
 
-  for (var i = 0; i < guaranteedCharacters.length; i++) {
+  for (var i = 0; i < guaranteedCharacters.characterlength; i++) {
     result[i] = guaranteedCharacters[i];
   }
 
