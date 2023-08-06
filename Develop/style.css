@@ -1,9 +1,12 @@
+/*Global styling*/
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
+/*End global styling*/
 
+/*Body Styling*/
 html,
 body,
 .wrapper {
@@ -22,14 +25,18 @@ body {
   padding-left: 20px;
   padding-right: 20px;
 }
+/*End body styling*/
 
+/*Header styling*/
 header {
   text-align: center;
   padding: 20px;
   padding-top: 0px;
   color: hsl(206, 17%, 28%);
 }
+/*End header styling*/
 
+/*Card class styling*/
 .card {
   background-color: hsl(0, 0%, 100%);
   border-radius: 5px;
@@ -41,7 +48,9 @@ header {
   max-width: 800px;
   padding: 30px 40px;
 }
+/*End Card styling*/
 
+/*Card header styling*/
 .card-header::after {
   content: " ";
   display: block;
@@ -49,11 +58,15 @@ header {
   background: #e7e9eb;
   height: 2px;
 }
+/*End Card Header styling*/
 
+/*Card Body styling*/
 .card-body {
   min-height: 100px;
 }
+/*End card body styling*/
 
+/*Card footer styling*/
 .card-footer {
   text-align: center;
 }
@@ -71,7 +84,9 @@ header {
   display: block;
   clear: both;
 }
+/*End Card footer styling*/
 
+/*Button stlying*/
 .btn {
   border: none;
   background-color: hsl(360, 91%, 36%);
@@ -92,11 +107,15 @@ button[disabled] {
   cursor: default;
   background: #c0c7cf;
 }
+/*End button styling*/
 
+/*Float*/
 .float-right {
   float: right;
 }
+/*End Float*/
 
+/*Password id styling*/
 #password {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -117,7 +136,9 @@ button[disabled] {
   resize: none;
   overflow: hidden;
 }
+/*end password id styling*/
 
+/*Media Querys*/
 @media (max-width: 690px) {
   .btn {
     font-size: 1rem;
